@@ -1,0 +1,24 @@
+package com.openclassrooms.mddapi.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class CommentDto {
+
+    private long id;
+
+    @NotBlank
+    private String content;
+
+    @NotNull
+    private Long article;
+
+    private String author;
+
+}
