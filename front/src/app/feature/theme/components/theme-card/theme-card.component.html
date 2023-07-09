@@ -1,0 +1,6 @@
+<mat-card class="card">
+  <p class="title">{{ theme.name }}</p>
+  <p>{{ theme.description }}</p>
+  <button mat-flat-button color="primary" (click)="toggleSubscription()">{{ userSubscribed ? "Se désabonner" :
+    "S'abonner"}}</button>
+</mat-card>

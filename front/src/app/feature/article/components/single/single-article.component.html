@@ -1,0 +1,29 @@
+<app-layout [withBackLink]="true" link="/articles">
+  <div class="article" *ngIf="loaded else loading">
+    <h1>{{article.title}}</h1>
+    <div class="article__info">
+      <p>{{article.updated_at | date: 'dd/MM/yy'}}</p>
+      <p>{{article.author}}</p>
+      <p>{{ theme }}</p>
+    </div>
+    <p class="article__content">{{article.content}}</p>
+    <hr />
+    <h2>Commentaires</h2>
+    <div *ngIf="comments.length === 0" class="comment-container">
+      <p>Aucun commentaire, soyez le premier à interagir !</p>
+    </div>
+    <div *ngFor="let comment of comments" class="comment-container">
+      <p class="comment__author">{{comment.author}}</p>
+      <p class="comment__content">{{comment.content}}</p>
+    </div>
+    <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+      <mat-form-field appearance="outline" class="comment__input">
+        <textarea matNativeControl formControlName="content" placeholder="Ecrivez ici votre commentaire"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Commenter</button>
+    </form>
+  </div>
+  <ng-template #loading>
+    <p>Chargement en cours...</p>
+  </ng-template>
+</app-layout>

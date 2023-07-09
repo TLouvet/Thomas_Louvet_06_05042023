@@ -1,0 +1,9 @@
+<mat-card class="card">
+  <p class="title">{{ article.title }}</p>
+  <div class="articleInfo">
+    <p>{{article.updated_at | date: 'dd/MM/yy'}} </p>
+    <p>{{ article.author }}</p>
+  </div>
+  <p>{{ formatedContent }}</p>
+  <a class="card-link" [routerLink]="['/articles', article.id]"></a>
+</mat-card>

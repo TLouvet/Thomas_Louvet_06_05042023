@@ -1,0 +1,8 @@
+<app-layout>
+  <card-list *ngIf="loaded else loading">
+    <app-theme-card *ngFor="let theme of themes" [theme]="theme"></app-theme-card>
+  </card-list>
+  <ng-template #loading>
+    <p>Chargement en cours...</p>
+  </ng-template>
+</app-layout>

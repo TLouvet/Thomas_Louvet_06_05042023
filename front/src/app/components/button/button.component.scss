@@ -1,0 +1,12 @@
+[mat-button] {
+  height: 40px;
+  background-color: #7763c5;
+  padding: 0 15px;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+
+  &.mat-mdc-button {
+    color: white;
+  }
+}

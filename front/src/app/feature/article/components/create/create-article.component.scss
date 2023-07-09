@@ -1,0 +1,20 @@
+@import "../../../../../styles/main.scss";
+
+.article-content {
+  textarea {
+    resize: none;
+    height: 250px;
+
+    @include xs() {
+      height: 210px;
+    }
+  }
+}
+
+.submit-btn {
+  margin-top: 20px;
+
+  @include xs() {
+    margin-top: 0;
+  }
+}
