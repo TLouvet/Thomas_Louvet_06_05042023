@@ -30,7 +30,8 @@ public class SpringSecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .cors(AbstractHttpConfigurer::disable)
+                .cors()
+                .and()
                 .headers()
                 .xssProtection()
                 .and()
@@ -42,8 +43,8 @@ public class SpringSecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("api/auth/*").permitAll()
-                        .anyRequest().permitAll())
+                        .requestMatchers("/auth/*").permitAll()
+                        .anyRequest().authenticated())
                 .exceptionHandling().authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
 
         http.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);

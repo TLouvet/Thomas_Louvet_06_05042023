@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+
+// TODO : bouger les mapper dans les services
+
 @SpringBootApplication
 public class MddApiApplication {
 

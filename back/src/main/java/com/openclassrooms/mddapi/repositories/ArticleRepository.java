@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface ArticleRepository extends CrudRepository<Article, Long > {
     Iterable<Article> findAllByOrderByIdDesc();
 
-    @Query(value = "SELECT a FROM Article a JOIN a.theme t JOIN t.users u WHERE u.id = :userId")
+    @Query(value = "SELECT a FROM Article a JOIN a.theme t JOIN t.users u WHERE u.id = :userId ORDER BY a.id ASC")
     Iterable<Article> findUserFeed(@Param("userId") Long userId);
 }

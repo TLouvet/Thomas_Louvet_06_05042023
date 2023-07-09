@@ -26,6 +26,10 @@ public class ThemeServiceImpl implements ThemeService {
         return this.themeRepository.findAllByOrderByNameAsc();
     }
 
+    public Theme findOne(Long id) {
+        return this.themeRepository.findById(id).orElse(null);
+    }
+
     public Iterable<Theme> findUserSubscribedThemes() {
         User user = this.userDetailsService.getUser();
         return this.themeRepository.findSubscribedThemesByUserId(user.getId());

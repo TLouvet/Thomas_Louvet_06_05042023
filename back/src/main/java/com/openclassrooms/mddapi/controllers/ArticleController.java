@@ -35,6 +35,7 @@ public class ArticleController {
     @Autowired
     private ModelMapper modelMapper;
 
+    // TODO -- Le projet mentionne-t-il vraiment cette route ?
     @GetMapping()
     public ResponseEntity<?> findAll(){
         Iterable<Article> articles = this.articleService.findAll();
@@ -69,9 +70,6 @@ public class ArticleController {
     @GetMapping("/{id}/comments")
     public ResponseEntity<?> findArticleComment(@PathVariable("id") Long id) {
         Iterable<Comment> comments = this.commentService.findArticleComments(id);
-        System.out.println("ICI BAS");
-        System.out.println(comments.toString());
-        System.out.println("NOUS PARTONS");
         Iterable<CommentDto> formattedComments = this.commentMapper.mapToDtoList(comments);
         return ResponseEntity.ok(formattedComments);
     }

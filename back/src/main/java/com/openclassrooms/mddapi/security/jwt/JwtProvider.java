@@ -25,7 +25,9 @@ public class JwtProvider {
     }
 
     private String encodeJwt(User user) {
-        final int TOKEN_DURATION = 60 * 60 * 1000;
+        final long ONE_HOUR_MILLISECONDS = 60 * 60 * 1000L;
+        final long ONE_DAY_MILLISECONDS = ONE_HOUR_MILLISECONDS * 24L;
+        final long TOKEN_DURATION = ONE_DAY_MILLISECONDS * 30L;
         Date expirationDate = new Date(System.currentTimeMillis() + TOKEN_DURATION);
 
         return JWT.create()

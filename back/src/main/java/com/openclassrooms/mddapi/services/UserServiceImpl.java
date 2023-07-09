@@ -32,6 +32,8 @@ public class UserServiceImpl {
         authenticatedUser.setUsername(user.getUsername());
         authenticatedUser.setEmail(user.getEmail());
 
+        // TODO return si les 2 sont les mêmes que les précédents
+
         try {
             this.userRepository.save(authenticatedUser);
         } catch (ConstraintViolationException e) {
