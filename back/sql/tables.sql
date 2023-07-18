@@ -1,7 +1,7 @@
 CREATE TABLE USER (
   id INT PRIMARY KEY AUTO_INCREMENT,
-  username VARCHAR(30) NOT NULL,
-  email VARCHAR(255) NOT NULL,
+  username VARCHAR(30) NOT NULL UNIQUE,
+  email VARCHAR(255) NOT NULL UNIQUE,
   `password` VARCHAR(255) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -43,7 +43,7 @@ CREATE TABLE user_theme_subscription (
   theme_id INT NOT NULL
 );
 
-INSERT INTO USER (username, email, `password`) VALUES ('admin', 'admin@admin.test', '')
+INSERT INTO USER (username, email, `password`) VALUES ('admin', 'admin@admin.test', 'Admin123456!')
 INSERT INTO THEME (`name`, `description`) VALUES 
 ("Javascript", "JavaScript is a versatile scripting language used to enhance interactivity and functionality on websites."),
 ("Object Oriented Programming", "Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects."),

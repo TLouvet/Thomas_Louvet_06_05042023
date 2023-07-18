@@ -53,14 +53,9 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // TODO - this bad af wow
-    // this.user = this.userSessionService.user;
-    this.userSessionService.$subscriptions().subscribe((subscriptions) => {
-      console.log('subs', subscriptions);
+    this.themeService.getUserSubscribedThemes().subscribe((res) => this.userSessionService.setSubscriptions(res));
+    this.destroy$ = this.userSessionService.$subscriptions().subscribe((subscriptions) => {
       this.themesSubcriptions = subscriptions;
-      if (subscriptions.length === 0) {
-        this.themeService.getUserSubscribedThemes().subscribe((res) => this.userSessionService.setSubscriptions(res));
-      }
     });
   }
 

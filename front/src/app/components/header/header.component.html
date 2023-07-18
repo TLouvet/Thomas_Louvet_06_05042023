@@ -7,10 +7,10 @@
     <mat-menu #menu="matMenu" yPosition="above" [overlapTrigger]="true" backdropClass="mobileMenuBackdrop"
       class="mobilePanelMenu">
       <div class="mobileLinksContainer">
-        <a mat-menu-item class="mobileMenuItem" routerLink="/articles">
+        <a mat-menu-item class="mobileMenuItem" routerLink="/articles" routerLinkActive="activeLink">
           Articles
         </a>
-        <a mat-menu-item class="mobileMenuItem" routerLink="/themes">
+        <a mat-menu-item class="mobileMenuItem" routerLink="/themes" routerLinkActive="activeLink">
           Themes
         </a>
         <a mat-menu-item class="mobileMenuItem userIcon" routerLink="/profile">
@@ -29,8 +29,9 @@
     </mat-menu>
 
     <mat-nav-list class="sm-list">
-      <a mat-list-item *ngFor="let route of ROUTES" [routerLink]="route.path">{{route.label}}</a>
-      <a class="userIcon" routerLink="/profile">
+      <a mat-list-item *ngFor="let route of ROUTES" routerLinkActive="activeLink"
+        [routerLink]="route.path">{{route.label}}</a>
+      <a class="userIcon" routerLink="/profile" routerLinkActive="profileLink">
         <svg width="27" height="30" viewBox="0 0 27 30" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="&#240;&#159;&#166;&#134; icon &#34;user&#34;">
             <path id="Vector"

@@ -3,6 +3,22 @@
   width: 100%;
   justify-content: end;
 
+  .userIcon {
+    border-radius: 48px;
+    background: #d9d9d9;
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 25px;
+      height: 28px;
+    }
+  }
+
   .mobilePanelMenu {
     min-height: 100vh;
     height: 100vh;
@@ -54,6 +70,14 @@
 
   & a:last-child {
     margin-top: auto;
+    align-self: flex-end;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    span {
+      overflow: unset;
+    }
   }
 }
 

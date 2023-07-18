@@ -29,20 +29,12 @@ public class UserServiceImpl {
         user.setId(authenticatedUser.getId());
         user.setPassword(authenticatedUser.getPassword());
 
-        authenticatedUser.setUsername(user.getUsername());
-        authenticatedUser.setEmail(user.getEmail());
-
-        // TODO return si les 2 sont les mêmes que les précédents
-
         try {
-            this.userRepository.save(authenticatedUser);
+            this.userRepository.save(user);
         } catch (ConstraintViolationException e) {
             throw new BadRequestException();
         }
-        return user;
-    }
 
-    private boolean hasSentSameValues(User user, User authenticatedUser){
-        return user.getEmail().equals(authenticatedUser.getEmail()) && user.getUsername().equals(authenticatedUser.getUsername());
+        return user;
     }
 }

@@ -1,5 +1,9 @@
 @import "../../../../../styles/mixins.scss";
 
+h1 {
+  font-weight: 700;
+}
+
 .article {
   margin-left: 20px;
   text-align: left;
@@ -23,7 +27,54 @@ h2 {
   margin-bottom: 30px;
 }
 
+mat-form-field {
+  width: 75%;
+  height: 120px;
+  margin: 0;
+
+  @include xs {
+    position: relative;
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 120px !important;
+    width: 100% !important;
+
+    @include xs {
+      width: 90% !important;
+    }
+  }
+}
+
+.submit {
+  background-color: transparent;
+  border: none;
+
+  @include xs() {
+    background-color: transparent;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    top: 0;
+  }
+
+  .icon {
+    @include xs() {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
 .comment {
+  padding-left: 20px;
+
+  @include xs() {
+    padding-left: 0;
+  }
+
   &-container {
     display: flex;
 
@@ -33,18 +84,32 @@ h2 {
     }
   }
 
+  &__form {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+
+    @include xs {
+      position: relative;
+      display: unset;
+    }
+  }
+
   &__content {
-    width: 500px;
+    min-width: 500px;
     min-height: 50px;
     border-radius: 16px;
     background: #eee;
     padding: 20px;
-
+    word-break: break-all;
     margin-left: 30px;
+
     @include xs {
+      min-width: unset;
       min-height: unset;
       margin-left: 0;
       width: 90%;
+      background: transparent;
     }
   }
 
@@ -55,8 +120,12 @@ h2 {
   }
 
   &__input {
-    border-radius: 16px;
     border: 1px solid #000;
     background: #fff;
+    width: 570px;
+
+    @include xs {
+      width: 100%;
+    }
   }
 }

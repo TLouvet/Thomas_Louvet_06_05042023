@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { UserSessionService } from '../services/user-session.service';
 import { UserService } from '../services/user.service';
 import { Observable, of } from 'rxjs';
@@ -7,11 +7,16 @@ import { catchError, switchMap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
-  constructor(private sessionService: UserSessionService, private userService: UserService) {}
+  constructor(private sessionService: UserSessionService, private userService: UserService, private router: Router) {}
 
-  public canActivate(): Observable<boolean> {
+  public canActivate(): Observable<boolean> | boolean {
     if (this.sessionService.isLogged) {
-      return of(true);
+      return true;
+    }
+
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['/auth/login']);
+      return false;
     }
 
     return this.userService.me().pipe(
@@ -21,7 +26,7 @@ export class AuthGuard implements CanActivate {
         this.sessionService.logIn(token!);
         return of(true);
       }),
-      catchError(() => of(false))
+      catchError(async () => this.router.navigate(['/auth/login']))
     );
   }
 }

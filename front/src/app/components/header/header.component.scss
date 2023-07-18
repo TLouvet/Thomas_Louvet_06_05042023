@@ -7,6 +7,19 @@ header {
   justify-content: space-between;
   align-items: center;
 
+  .activeLink {
+    span {
+      color: #6c5ccf !important;
+    }
+  }
+
+  .profileLink {
+    border: 3px solid #6c5ccf;
+    svg {
+      stroke: #6c5ccf;
+    }
+  }
+
   nav {
     width: 350px;
   }
@@ -53,6 +66,7 @@ header {
         height: 28px;
       }
     }
+
     @include xs() {
       display: none !important;
     }

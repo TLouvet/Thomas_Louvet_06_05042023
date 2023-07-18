@@ -24,7 +24,6 @@ export class ArticlesPage implements OnInit {
         this.loaded = true;
       },
       error: (error) => console.error(error),
-      complete: () => console.log('complete'),
     });
   }
 

@@ -16,6 +16,10 @@ main {
     flex-direction: row;
   }
 
+  @include xs() {
+    padding: 30px 10px 20px 10px;
+  }
+
   .back-link {
     text-align: left;
   }
