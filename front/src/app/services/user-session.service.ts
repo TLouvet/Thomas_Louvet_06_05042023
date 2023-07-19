@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Theme } from '../models/subscription.interface';
+import { Theme } from '../feature/theme/interfaces/subscription.interface';
 import { User } from '../interfaces/user.interface';
 
 @Injectable({

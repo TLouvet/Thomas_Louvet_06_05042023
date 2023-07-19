@@ -5,33 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AuthComponent } from './pages/auth/auth.component';
-import { ThemeCardComponent } from './feature/theme/components/theme-card/theme-card.component';
-import { ArticleCardComponent } from './feature/article/components/article-card/article-card.component';
 import { MaterialModule } from './material.module';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ThemesPage } from './pages/themes/themes.component';
 import { ComponentsModule } from './components/components.module';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
-import { CreateArticleComponent } from './feature/article/components/create/creat-article.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SingleArticleComponent } from './feature/article/components/single/single-article.component';
-import { ArticlesPage } from './feature/article/components/list/articles.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ThemeModule } from './feature/theme/theme.module';
+import { ArticleModule } from './feature/article/article.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProfileComponent,
-    AuthComponent,
-    ThemeCardComponent,
-    ArticleCardComponent,
-    ArticlesPage,
-    ThemesPage,
-    SingleArticleComponent,
-    CreateArticleComponent,
-    NotFoundComponent,
-  ],
+  declarations: [AppComponent, ProfileComponent, AuthComponent, NotFoundComponent],
   imports: [
+    ArticleModule,
+    ThemeModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

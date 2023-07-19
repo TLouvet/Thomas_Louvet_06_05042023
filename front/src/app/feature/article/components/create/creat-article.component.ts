@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ThemeService } from 'src/app/feature/theme/services/theme.service';
-import { Theme } from 'src/app/models/subscription.interface';
+import { Theme } from 'src/app/feature/theme/interfaces/subscription.interface';
 import { ArticleService } from '../../services/article.service';
 import { CreateArticleRequest } from '../../interfaces/createArticleRequest.interface';
 import { Title } from '@angular/platform-browser';
@@ -35,7 +35,6 @@ export class CreateArticleComponent implements OnInit {
     const article = this.articleForm.value as CreateArticleRequest;
     this.articleService.createArticle(article).subscribe({
       next: () => {
-        console.log('article created');
         this.router.navigate(['/articles']);
       },
       error: () => (this.onError = true),

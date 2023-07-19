@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserSessionService } from 'src/app/services/user-session.service';
 import { Subscription } from 'rxjs';
-import { Theme } from 'src/app/models/subscription.interface';
+import { Theme } from 'src/app/feature/theme/interfaces/subscription.interface';
 import { ThemeService } from 'src/app/feature/theme/services/theme.service';
 import { UserService } from 'src/app/services/user.service';
 import { Title } from '@angular/platform-browser';

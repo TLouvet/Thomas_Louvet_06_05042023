@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ThemeService } from 'src/app/feature/theme/services/theme.service';
-import { Theme } from 'src/app/models/subscription.interface';
+import { Theme } from 'src/app/feature/theme/interfaces/subscription.interface';
 
 @Component({
   selector: 'app-themes',
