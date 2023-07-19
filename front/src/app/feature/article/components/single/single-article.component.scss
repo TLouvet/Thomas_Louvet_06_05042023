@@ -28,10 +28,9 @@ h2 {
 }
 
 mat-form-field {
-  width: 75%;
+  width: 90%;
   height: 120px;
   margin: 0;
-
   @include xs {
     position: relative;
     width: 100%;
@@ -40,7 +39,7 @@ mat-form-field {
   textarea {
     min-height: 120px !important;
     width: 100% !important;
-
+    resize: none;
     @include xs {
       width: 90% !important;
     }
@@ -50,6 +49,7 @@ mat-form-field {
 .submit {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 
   @include xs() {
     background-color: transparent;
@@ -70,17 +70,24 @@ mat-form-field {
 
 .comment {
   padding-left: 20px;
+  padding-right: 50px;
 
   @include xs() {
     padding-left: 0;
   }
 
   &-container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 100px 75vw;
+
+    @include md {
+      grid-template-columns: 100px auto;
+    }
 
     @include xs {
-      flex-direction: column-reverse;
+      grid-template-columns: unset;
       margin-bottom: 30px;
+      order: -1;
     }
   }
 
@@ -88,6 +95,7 @@ mat-form-field {
     display: flex;
     align-items: center;
     margin-top: 50px;
+    column-gap: 20px;
 
     @include xs {
       position: relative;
@@ -115,6 +123,7 @@ mat-form-field {
 
   &__author {
     @include xs {
+      order: 1;
       text-align: end;
     }
   }
