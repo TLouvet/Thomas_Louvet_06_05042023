@@ -1,6 +1,7 @@
 package com.openclassrooms.mddapi.services;
 
 import com.openclassrooms.mddapi.exception.BadRequestException;
+import com.openclassrooms.mddapi.interfaces.UserService;
 import com.openclassrooms.mddapi.models.User;
 import com.openclassrooms.mddapi.repositories.UserRepository;
 import com.openclassrooms.mddapi.security.UserDetailsService;
@@ -12,7 +13,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 
 
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;

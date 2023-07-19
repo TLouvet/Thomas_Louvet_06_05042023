@@ -35,14 +35,6 @@ public class ArticleController {
     @Autowired
     private ModelMapper modelMapper;
 
-    // TODO -- Le projet mentionne-t-il vraiment cette route ?
-    @GetMapping()
-    public ResponseEntity<?> findAll(){
-        Iterable<Article> articles = this.articleService.findAll();
-        Iterable<ArticleDto> articlesResponse = this.articleMapper.mapToDtoList(articles);
-        return ResponseEntity.ok().body(articlesResponse);
-    }
-
     /**
      * Get Articles depending on the user subscriptions, which will be his feed on the homepage
      * @return

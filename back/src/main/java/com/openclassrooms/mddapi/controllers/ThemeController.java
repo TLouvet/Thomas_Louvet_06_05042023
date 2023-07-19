@@ -27,7 +27,6 @@ public class ThemeController {
         return ResponseEntity.ok(themesDto);
     }
 
-    // TODO Mapper in service
     @GetMapping("/{id}")
     public ResponseEntity<?> findOne(@PathVariable("id") Long id) {
         Theme theme = this.themeService.findOne(id);

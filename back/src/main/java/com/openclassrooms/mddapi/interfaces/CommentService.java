@@ -4,4 +4,5 @@ import com.openclassrooms.mddapi.models.Comment;
 
 public interface CommentService {
     Comment create(Comment comment);
+    Iterable<Comment> findArticleComments(Long id);
 }

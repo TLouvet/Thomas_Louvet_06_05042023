@@ -3,7 +3,7 @@ package com.openclassrooms.mddapi.interfaces;
 import com.openclassrooms.mddapi.models.Article;
 
 public interface ArticleService {
-    Iterable<Article> findAll();
+    Iterable<Article> findFeedArticles();
     Article findOne(long id);
     Article create(Article article);
 }
