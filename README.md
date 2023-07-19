@@ -1,10 +1,28 @@
 # P6-Full-Stack-reseau-dev
 
+## SQL 
+
+- Create your database
+- From back/sql import tables.sql into your database
+
+## Backend Setup
+
+- Backend uses Java Spring Boot v3.0.6
+- Java 17 is used
+
+From back/src/main/resources, create your application.properties file and use the example file as a model.
+
+Run your app with mvn spring-boot:run
+
 ## Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) **version 15**. 
 
 Don't forget to install your node_modules before starting (`npm install`).
+
+### Proxy
+
+A proxy has been set and sends the requests to localhost:3001, if you are going to use another port for the backend application, you will need to update the file called proxy.config.json
 
 ### Development server
 
@@ -13,13 +31,3 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-### Where to start
-
-As you may have seen if you already started the app, a simple home page containing a logo, a title and a button is available. If you take a look at its code (in the `home.component.html`) you will see that an external UI library is already configured in the project.
-
-This library is `@angular/material`, it's one of the most famous in the angular ecosystem. As you can see on their docs (https://material.angular.io/), it contains a lot of highly customizable components that will help you design your interfaces quickly.
-
-Note: I recommend to use material however it's not mandatory, if you prefer you can get ride of it.
-
-Good luck!
